@@ -1,0 +1,95 @@
+{% extends "layout.nunjucks" %}
+
+
+{% block content %} 
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/banner.nunjucks' as nav %}
+{{nav.active('portfolio',bannercopy)}}
+
+  <style scoped>video {
+  width: 100%    !important;
+  height: auto   !important;
+   figure { display: block; background: #eee; padding: 10px; }
+}</style>
+		<!-- Main -->
+		<div id="main" class="container">
+
+					<!-- Intro -->
+			<hr class="major" />
+					
+			<div class="row">
+				<section class="3u 3u(medium) 12u$(small)">
+					<h3>{{project.title}}</h3>
+				</section>
+
+				<section class="3u 3u(medium) 12u$(small)">
+					<ul class="actions small">
+							<li><a href="#" class="button small buttoninlinetag">Small</a></li>
+							<li><a href="#" class="button small buttoninlinetag">Ssdmall</a></li>
+							<li><a href="#" class="button small buttoninlinetag">Bal bla bla</a></li>
+							<li><a href="#" class="button small buttoninlinetag">Bal bla bla</a></li>
+							<li><a href="#" class="button small buttoninlinetag">Small</a></li>
+				</ul>
+				</section>
+				<section class="3u 3u(medium) 12u$(small)">
+					<p>Posted by<br>Igal Nassima</p>
+					
+				</section>
+				<section class="3u 3u(medium) 12u$(small)">
+					<p>Date Created<br>
+					Date Updated</p>
+					
+				</section>
+				
+			</div>
+
+			
+
+
+			<div class="row">
+					{% if project.header.type == 'image' %}
+					<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[0]}}" alt="" /></span></div>
+					{% else %}
+					<div class="12u 12u$(large) 12u$(small)"><figure>
+						<iframe src="http://player.vimeo.com/video/{{project.header.url}}?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0"></iframe>
+						</figure>
+					</div>
+					{% endif %}
+			</div>	
+
+				<hr class="major" />
+					<div class="row homerollover">
+						<section class="6u 6u(medium) 12u$(small)">
+							<h3>STEP 1</h3>
+							
+						</section>
+						<section class="6u$ 6u$(medium) 12u$(small)">
+							
+							<p>{{project.description}}</p>
+						</section>
+					</div>
+
+						<hr class="major" />
+					<div class="row homerollover">
+						<section class="6u 6u(medium) 12u$(small)">
+							<h3>STEP 2</h3>
+						
+						</section>
+						<section class="6u$ 6u$(medium) 12u$(small)">
+							
+							<p>{{project.description}}</p>
+						</section>
+					</div>				
+
+	
+		
+			<div class="row">
+					<div class="6u  12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[1]}}" alt="" /></span></div>
+					<div class="6u  12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[2]}}" alt="" /></span></div>
+			</div>	
+		
+
+		</div>
+
+
+{% endblock %}
