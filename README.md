@@ -23,8 +23,8 @@
 
 ## INSTALL && KICK OFF
 
-NPM INSTALL to install packages
-NPM START to start on port:3000
+NPM INSTALL to install packages <br>
+NPM START to start on localhost:3000
 
 
 ## TODO
